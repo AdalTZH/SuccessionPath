@@ -1,0 +1,60 @@
+{
+  "name": "DevelopmentPlan",
+  "type": "object",
+  "properties": {
+    "employee_id": {
+      "type": "string"
+    },
+    "employee_name": {
+      "type": "string"
+    },
+    "target_appointment": {
+      "type": "string"
+    },
+    "current_readiness": {
+      "type": "string"
+    },
+    "skills_gap": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "skill": {
+            "type": "string"
+          },
+          "required": {
+            "type": "number"
+          },
+          "current": {
+            "type": "number"
+          },
+          "gap": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "recommended_development": {
+      "type": "string"
+    },
+    "course_intervention": {
+      "type": "string"
+    },
+    "target_completion_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "owner": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "employee_id",
+    "employee_name",
+    "target_appointment",
+    "status"
+  ]
+}

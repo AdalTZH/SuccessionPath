@@ -1,0 +1,64 @@
+{
+  "name": "Action",
+  "type": "object",
+  "properties": {
+    "action": {
+      "type": "string"
+    },
+    "individual": {
+      "type": "string"
+    },
+    "individual_id": {
+      "type": "string",
+      "description": "PERNR of the individual the case belongs to, so the case can open their Career Pathway view."
+    },
+    "module": {
+      "type": "string"
+    },
+    "appointment": {
+      "type": "string",
+      "description": "Workbook appointment label the case is raised against \u2014 the appointment expected to be vacated."
+    },
+    "trigger_date": {
+      "type": "string",
+      "format": "date",
+      "description": "APPT END \u2014 the date this case is planned against. A trigger for planning only, never confirmation of approval."
+    },
+    "case_type": {
+      "type": "string",
+      "description": "Succession case (fill the appointment being vacated) or Posting case (the individual approaching the end of their appointment)."
+    },
+    "owner": {
+      "type": "string"
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "priority": {
+      "type": "string",
+      "enum": [
+        "High",
+        "Medium",
+        "Low"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Open",
+        "In Progress",
+        "Completed"
+      ]
+    },
+    "date_completed": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "action",
+    "module",
+    "status"
+  ]
+}

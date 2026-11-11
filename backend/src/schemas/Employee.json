@@ -1,0 +1,782 @@
+{
+  "name": "Employee",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "employee_id": {
+      "type": "string"
+    },
+    "rank": {
+      "type": "string"
+    },
+    "vocation": {
+      "type": "string"
+    },
+    "organisation": {
+      "type": "string"
+    },
+    "department": {
+      "type": "string"
+    },
+    "current_appointment": {
+      "type": "string"
+    },
+    "appointment_start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "years_in_rank": {
+      "type": "number"
+    },
+    "years_in_appointment": {
+      "type": "number"
+    },
+    "years_in_service": {
+      "type": "number",
+      "description": "Total years of service."
+    },
+    "career_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "appointment": {
+            "type": "string"
+          },
+          "organisation": {
+            "type": "string"
+          },
+          "start_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "end_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "duration": {
+            "type": "string"
+          },
+          "appointment_type": {
+            "type": "string"
+          },
+          "responsibilities": {
+            "type": "string"
+          },
+          "experience_gained": {
+            "type": "string"
+          },
+          "experience_tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "skill": {
+            "type": "string"
+          },
+          "proficiency": {
+            "type": "number"
+          },
+          "evidence": {
+            "type": "string"
+          },
+          "evidence_source": {
+            "type": "string"
+          },
+          "last_validated": {
+            "type": "string",
+            "format": "date"
+          },
+          "verification_status": {
+            "type": "string"
+          },
+          "verified_by": {
+            "type": "string",
+            "description": "Supervisor who signed off the verification of this skill."
+          },
+          "verified_by_appointment": {
+            "type": "string",
+            "description": "Appointment designation of the verifying supervisor (e.g. CO 123)."
+          }
+        }
+      }
+    },
+    "attributes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "attribute": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "number"
+          },
+          "evidence": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Configurable behavioural attributes. Distinct from skills."
+    },
+    "qualifications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "qualification": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "expiry": {
+            "type": "string"
+          },
+          "sponsorship": {
+            "type": "string"
+          },
+          "verification_status": {
+            "type": "string"
+          },
+          "verified_by": {
+            "type": "string",
+            "description": "Supervisor who signed off the verification of this qualification."
+          },
+          "verified_by_appointment": {
+            "type": "string",
+            "description": "Appointment designation of the verifying supervisor (e.g. CO 123)."
+          }
+        }
+      }
+    },
+    "courses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "course": {
+            "type": "string"
+          },
+          "completion_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "qualification_skill_obtained": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string",
+            "description": "Completed | Planned, as recorded in the source workbook."
+          }
+        }
+      }
+    },
+    "posting_availability": {
+      "type": "object",
+      "properties": {
+        "current_tour_end_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "earliest_posting_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "availability": {
+          "type": "string"
+        },
+        "posting_restrictions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "career_aspirations": {
+      "type": "object",
+      "properties": {
+        "interests": {
+          "type": "string"
+        },
+        "preferred_appointments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "preferred_appointment_1": {
+          "type": "string"
+        },
+        "preferred_appointment_2": {
+          "type": "string"
+        },
+        "preferred_appointment_3": {
+          "type": "string"
+        },
+        "preferred_career_area": {
+          "type": "string"
+        },
+        "development_interests": {
+          "type": "string"
+        },
+        "mobility_considerations": {
+          "type": "string"
+        },
+        "last_updated": {
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+    "hr_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "development": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "gap": {
+            "type": "string"
+          },
+          "gap_size": {
+            "type": "number",
+            "description": "Levels below the requirement, as recorded in the source workbook."
+          },
+          "action": {
+            "type": "string"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "due_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "status": {
+            "type": "string",
+            "description": "Recorded = captured from the source workbook and not yet agreed by HR."
+          }
+        }
+      }
+    },
+    "pernr": {
+      "type": "string",
+      "description": "Personnel Number (eHR)"
+    },
+    "nric": {
+      "type": "string"
+    },
+    "callsign": {
+      "type": "string"
+    },
+    "rank_grade": {
+      "type": "string"
+    },
+    "complete_name": {
+      "type": "string"
+    },
+    "rank_name": {
+      "type": "string",
+      "description": "RANK/NAME combined field"
+    },
+    "voc": {
+      "type": "string",
+      "description": "Vocation code from eHR"
+    },
+    "appt": {
+      "type": "string",
+      "description": "Appointment code from eHR"
+    },
+    "subunit_7": {
+      "type": "string"
+    },
+    "subunit_6": {
+      "type": "string"
+    },
+    "subunit_5": {
+      "type": "string"
+    },
+    "subunit_4_appt": {
+      "type": "string"
+    },
+    "subunit_3_appt": {
+      "type": "string"
+    },
+    "subunit_2_appt": {
+      "type": "string"
+    },
+    "subunit_1_appt": {
+      "type": "string"
+    },
+    "unit": {
+      "type": "string"
+    },
+    "fmn": {
+      "type": "string"
+    },
+    "full_appt": {
+      "type": "string"
+    },
+    "appt_tag": {
+      "type": "string"
+    },
+    "date_to_appt": {
+      "type": "string",
+      "format": "date"
+    },
+    "date_unit": {
+      "type": "string",
+      "format": "date"
+    },
+    "position_id": {
+      "type": "string"
+    },
+    "erank": {
+      "type": "string"
+    },
+    "evoc": {
+      "type": "string"
+    },
+    "date_rank": {
+      "type": "string",
+      "format": "date"
+    },
+    "date_voc": {
+      "type": "string",
+      "format": "date"
+    },
+    "pa": {
+      "type": "string",
+      "description": "PA code"
+    },
+    "tos": {
+      "type": "string",
+      "description": "Type of Service"
+    },
+    "hire_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "compl_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "dob": {
+      "type": "string",
+      "format": "date"
+    },
+    "gender": {
+      "type": "string"
+    },
+    "city_of_birth": {
+      "type": "string"
+    },
+    "nationality": {
+      "type": "string"
+    },
+    "ic_status": {
+      "type": "string"
+    },
+    "blood_group": {
+      "type": "string"
+    },
+    "race": {
+      "type": "string"
+    },
+    "mar_st": {
+      "type": "string",
+      "description": "Marital Status"
+    },
+    "religion": {
+      "type": "string"
+    },
+    "pes": {
+      "type": "string",
+      "description": "Physical Employment Status"
+    },
+    "bmi": {
+      "type": "number"
+    },
+    "ippt_award": {
+      "type": "string"
+    },
+    "ippt_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "bmi_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "hsp": {
+      "type": "string",
+      "description": "Health Status Profile"
+    },
+    "lang_spoken": {
+      "type": "string"
+    },
+    "lang_written": {
+      "type": "string"
+    },
+    "ac": {
+      "type": "string",
+      "description": "Aircraft"
+    },
+    "spec": {
+      "type": "string",
+      "description": "Specialization"
+    },
+    "spec_2": {
+      "type": "string"
+    },
+    "ep_ip": {
+      "type": "string"
+    },
+    "highest_ops_cat": {
+      "type": "string"
+    },
+    "highest_ops_cat_dte": {
+      "type": "string",
+      "format": "date"
+    },
+    "instr_cat": {
+      "type": "string",
+      "description": "Instructor Category"
+    },
+    "instr_cat_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "cat_ocu": {
+      "type": "string"
+    },
+    "cat_d": {
+      "type": "string"
+    },
+    "cat_c": {
+      "type": "string"
+    },
+    "cat_b": {
+      "type": "string"
+    },
+    "cat_a": {
+      "type": "string"
+    },
+    "conex_td": {
+      "type": "string",
+      "description": "CONEX/TD"
+    },
+    "perf_2026": {
+      "type": "string",
+      "description": "Performance grade 2026 \u2014 editable, update year field name when year changes"
+    },
+    "ccep": {
+      "type": "string"
+    },
+    "scep": {
+      "type": "string"
+    },
+    "hcep": {
+      "type": "string"
+    },
+    "yir_26": {
+      "type": "string",
+      "description": "Years in Rank 2026 \u2014 editable year field"
+    },
+    "age_26": {
+      "type": "number",
+      "description": "Age 2026 \u2014 editable year field"
+    },
+    "assmt_2026": {
+      "type": "string",
+      "description": "Assessment 2026 \u2014 editable year field"
+    },
+    "assmt_2025": {
+      "type": "string"
+    },
+    "assmt_2024": {
+      "type": "string"
+    },
+    "assmt_2023": {
+      "type": "string"
+    },
+    "assmt_2022": {
+      "type": "string"
+    },
+    "assmt_2021": {
+      "type": "string"
+    },
+    "assmt_2020": {
+      "type": "string"
+    },
+    "assmt_2019": {
+      "type": "string"
+    },
+    "assmt_2018": {
+      "type": "string"
+    },
+    "assmt_2017": {
+      "type": "string"
+    },
+    "assmt_2016": {
+      "type": "string"
+    },
+    "assmt_2015": {
+      "type": "string"
+    },
+    "assmt_2014": {
+      "type": "string"
+    },
+    "assmt_2013": {
+      "type": "string"
+    },
+    "scholarship": {
+      "type": "string"
+    },
+    "talent": {
+      "type": "string"
+    },
+    "wrangler": {
+      "type": "string"
+    },
+    "csc": {
+      "type": "string",
+      "description": "Command and Staff Course"
+    },
+    "csc_results": {
+      "type": "string"
+    },
+    "pcib": {
+      "type": "string"
+    },
+    "pcib_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "co_tour": {
+      "type": "string",
+      "description": "Commanding Officer Tour"
+    },
+    "ocib": {
+      "type": "string"
+    },
+    "ocib_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "oc_tour": {
+      "type": "string"
+    },
+    "bwc": {
+      "type": "string"
+    },
+    "rwc": {
+      "type": "string"
+    },
+    "fwc": {
+      "type": "string"
+    },
+    "wso_cse": {
+      "type": "string",
+      "description": "WSO Course"
+    },
+    "wpn_cse": {
+      "type": "string",
+      "description": "Weapon Course"
+    },
+    "bmtac": {
+      "type": "string"
+    },
+    "jiec": {
+      "type": "string"
+    },
+    "aioc": {
+      "type": "string"
+    },
+    "bioc": {
+      "type": "string"
+    },
+    "jisc": {
+      "type": "string"
+    },
+    "jissc": {
+      "type": "string"
+    },
+    "tswc_jwc": {
+      "type": "string",
+      "description": "TSWC/JWC"
+    },
+    "twsc_jwc_grade": {
+      "type": "string",
+      "description": "TWSC/JWC Grade"
+    },
+    "afac": {
+      "type": "string",
+      "description": "Air Forward Air Controller"
+    },
+    "afac_grade": {
+      "type": "string"
+    },
+    "ew_course": {
+      "type": "string",
+      "description": "Electronic Warfare Course (pre-2018 or 2018 syllabus)"
+    },
+    "nfl": {
+      "type": "string"
+    },
+    "aworb_usrb": {
+      "type": "string"
+    },
+    "posting_plan": {
+      "type": "string"
+    },
+    "posting_pref": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "planning_as_of": {
+      "type": "string",
+      "format": "date",
+      "description": "As-of date of the planning workbook row this record was last updated from."
+    },
+    "appt_end": {
+      "type": "string",
+      "format": "date",
+      "description": "APPT END \u2014 the date the current appointment is expected to end. A planning trigger date, not approval of a posting."
+    },
+    "posting_available_from": {
+      "type": "string",
+      "format": "date",
+      "description": "POSTING AVAILABLE FROM, as recorded in the source workbook."
+    },
+    "posting_approval": {
+      "type": "string",
+      "description": "POSTING APPROVAL status recorded in the source workbook."
+    },
+    "posting_planning_status": {
+      "type": "string",
+      "description": "POSTING PLANNING STATUS recorded in the source workbook."
+    },
+    "succession_trigger": {
+      "type": "boolean",
+      "description": "SUCCESSION TRIGGER recorded in the source workbook."
+    },
+    "posting_trigger": {
+      "type": "boolean",
+      "description": "POSTING TRIGGER recorded in the source workbook."
+    },
+    "planning_priority": {
+      "type": "string",
+      "description": "PLANNING PRIORITY recorded in the source workbook."
+    },
+    "career_stage": {
+      "type": "string"
+    },
+    "career_direction": {
+      "type": "string"
+    },
+    "development_interest": {
+      "type": "string"
+    },
+    "target_career_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "org_heuristic": {
+      "type": "string",
+      "description": "ORG (heuristic) \u2014 organisation inferred in the source workbook, indicative only."
+    },
+    "experience_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "latest_assessment_year": {
+      "type": "string"
+    },
+    "latest_performance": {
+      "type": "string",
+      "description": "Latest recorded performance grade."
+    },
+    "latest_potential": {
+      "type": "string",
+      "description": "Latest recorded potential grade."
+    },
+    "latest_assessment_summary": {
+      "type": "string"
+    },
+    "workbook_source": {
+      "type": "string",
+      "description": "Source workbook and sheet the planning fields were last imported from."
+    },
+    "current_appointment_status": {
+      "type": "string",
+      "description": "Verification state of the current appointment, e.g. 'Current / Ongoing \u2014 Subject to Validation' or 'Unverified \u2014 no open-ended record'."
+    },
+    "appointment_count": {
+      "type": "number",
+      "description": "Number of appointment-history rows imported for this individual."
+    },
+    "earliest_appointment_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "latest_appointment_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "total_history_months": {
+      "type": "number",
+      "description": "Sum of inclusive appointment durations in months."
+    },
+    "data_quality_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Flags raised during migration (missing current appointment, overlapping periods, etc.)."
+    },
+    "data_source": {
+      "type": "string",
+      "description": "Authoritative source of this record, e.g. 'AppointmentHistory_Redacted for linkage testing_sanitized.xlsx'."
+    },
+    "is_legacy_proxy": {
+      "type": "boolean",
+      "description": "True for pre-migration fictional/proxy records retained for traceability."
+    },
+    "archived": {
+      "type": "boolean",
+      "description": "True when the record must no longer be selectable in active workflows."
+    }
+  },
+  "required": [
+    "name",
+    "employee_id",
+    "rank",
+    "vocation"
+  ]
+}

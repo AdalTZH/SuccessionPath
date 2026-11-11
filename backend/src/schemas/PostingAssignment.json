@@ -1,0 +1,52 @@
+{
+  "name": "PostingAssignment",
+  "type": "object",
+  "properties": {
+    "appointment_id": {
+      "type": "string"
+    },
+    "appointment_title": {
+      "type": "string"
+    },
+    "primary_candidate_id": {
+      "type": "string"
+    },
+    "primary_candidate_name": {
+      "type": "string"
+    },
+    "alternate1_id": {
+      "type": "string"
+    },
+    "alternate1_name": {
+      "type": "string"
+    },
+    "alternate2_id": {
+      "type": "string"
+    },
+    "alternate2_name": {
+      "type": "string"
+    },
+    "selection_rationale": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "scenario_name": {
+      "type": "string"
+    },
+    "hr_override": {
+      "type": "boolean",
+      "description": "True when HR exercised judgement override to assign a candidate below the 60% eligibility threshold."
+    },
+    "override_justification": {
+      "type": "string",
+      "description": "Required HR justification when overriding the eligibility threshold."
+    }
+  },
+  "required": [
+    "appointment_id",
+    "appointment_title",
+    "status"
+  ]
+}

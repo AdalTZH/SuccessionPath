@@ -1,0 +1,8 @@
+backend/.env
+backend/data/
+backend/node_modules/
+exports/
+frontend/.env
+frontend/node_modules/
+frontend/dist/
+successionpath-data-export.zip

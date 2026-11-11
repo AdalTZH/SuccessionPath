@@ -1,0 +1,70 @@
+{
+  "name": "AppointmentCatalogue",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string",
+      "description": "Original abbreviated appointment name (SHORT APPT) \u2014 preserved verbatim, never expanded."
+    },
+    "usage_count": {
+      "type": "number",
+      "description": "Number of history rows carrying this label."
+    },
+    "distinct_employees": {
+      "type": "number",
+      "description": "Number of distinct personnel who have held this label."
+    },
+    "current_holders": {
+      "type": "number",
+      "description": "Number of personnel whose open-ended appointment carries this label."
+    },
+    "first_start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "latest_start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "validation_status": {
+      "type": "string",
+      "enum": [
+        "Unvalidated",
+        "Validated",
+        "Merged",
+        "Rejected"
+      ],
+      "description": "HR validation state. Identical labels are NOT assumed to be the same unique position until validated."
+    },
+    "merged_into": {
+      "type": "string",
+      "description": "Label this entry has been merged into, if HR has validated the merge."
+    },
+    "group": {
+      "type": "string",
+      "description": "HR-defined appointment group."
+    },
+    "notes": {
+      "type": "string"
+    },
+    "grooming_tier": {
+      "type": "string",
+      "description": "HR grooming tag. P1 = highest-visibility grooming appointment (top half of the tagged 5%), P2 = the next band. Empty when the appointment carries no grooming tag."
+    },
+    "speciality": {
+      "type": "string",
+      "description": "Vocation the appointment is tied to, derived from the vocations of whoever has held it: FIGHTER, TRANSPORT, HELICOPTER, AWO, UAV, AIR INTEL, NAVIGATOR, AIRCREW or ANYAIR (generalist, open to any air vocation)."
+    },
+    "speciality_evidence": {
+      "type": "string",
+      "description": "Basis for the speciality tag \u2014 the share of recorded holders who carry that vocation."
+    },
+    "tier_basis": {
+      "type": "string",
+      "description": "Basis for the grooming tier \u2014 the recorded holding count that placed this appointment in the tagged band."
+    }
+  },
+  "required": [
+    "label"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "name": "Course",
+  "type": "object",
+  "properties": {
+    "course_name": {
+      "type": "string"
+    },
+    "course_id": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "string"
+    },
+    "course_type": {
+      "type": "string",
+      "enum": [
+        "Mandatory Prerequisite",
+        "Readiness-enhancing",
+        "Developmental"
+      ],
+      "description": "Mandatory Prerequisite = must complete before appointment; Readiness-enhancing = strengthens readiness; Developmental = can close a gap."
+    },
+    "skills_developed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "expected_proficiency_gain": {
+      "type": "number",
+      "description": "Expected gain in proficiency levels. Course completion is evidence of development, NOT automatic proficiency (Rule 13)."
+    },
+    "qualification_awarded": {
+      "type": "string"
+    },
+    "prerequisites": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "target_population": {
+      "type": "string"
+    },
+    "course_dates": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "capacity": {
+      "type": "number"
+    }
+  },
+  "required": [
+    "course_name",
+    "course_id"
+  ]
+}

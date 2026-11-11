@@ -1,0 +1,149 @@
+{
+  "name": "Appointment",
+  "type": "object",
+  "properties": {
+    "appointment_id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "organisation": {
+      "type": "string"
+    },
+    "rank_requirement": {
+      "type": "string"
+    },
+    "vocation_requirement": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Acceptable vocations for this appointment. Empty array or includes 'Any' = any vocation. Multiple entries = appointment can be filled by any of the listed vocations."
+    },
+    "required_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mandatory_qualifications": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_skills": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "skill": {
+            "type": "string"
+          },
+          "proficiency": {
+            "type": "number",
+            "description": "Mandatory minimum proficiency (1-5). If mandatory=true, candidate below this is NOT ELIGIBLE."
+          },
+          "desired_proficiency": {
+            "type": "number",
+            "description": "Desired proficiency (1-5). Below this but above mandatory minimum = development gap."
+          },
+          "mandatory": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "required_courses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "course": {
+            "type": "string"
+          },
+          "classification": {
+            "type": "string",
+            "enum": [
+              "Mandatory Prerequisite",
+              "Readiness-enhancing",
+              "Developmental"
+            ],
+            "description": "Mandatory Prerequisite = must complete before appointment; Readiness-enhancing = strengthens readiness; Developmental = can close a gap."
+          }
+        }
+      }
+    },
+    "required_experience": {
+      "type": "string"
+    },
+    "preferred_experience": {
+      "type": "string"
+    },
+    "mandatory_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "desirable_criteria": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "tour_length": {
+      "type": "string"
+    },
+    "vacancy_status": {
+      "type": "string"
+    },
+    "criticality": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "additional_hr_notes": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "case_readiness": {
+      "type": "string"
+    },
+    "is_legacy_proxy": {
+      "type": "boolean",
+      "description": "True for a pre-migration sample appointment profile that has no validated mapping to the source catalogue."
+    },
+    "catalogue_label": {
+      "type": "string",
+      "description": "Source catalogue label this profile has been mapped to, once HR validates the mapping."
+    },
+    "catalogue_link_status": {
+      "type": "string",
+      "description": "Unresolved Reference | Mapped | Confirmed."
+    },
+    "archived": {
+      "type": "boolean",
+      "description": "True when the profile must no longer be selectable as an actual appointment."
+    }
+  },
+  "required": [
+    "title",
+    "rank_requirement"
+  ]
+}

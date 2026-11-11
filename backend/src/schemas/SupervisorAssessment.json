@@ -1,0 +1,97 @@
+{
+  "name": "SupervisorAssessment",
+  "type": "object",
+  "properties": {
+    "assessment_period": {
+      "type": "string",
+      "description": "Assessment year or period (e.g., '2024', '2024 H2')."
+    },
+    "employee_id": {
+      "type": "string"
+    },
+    "employee_name": {
+      "type": "string"
+    },
+    "supervisor_name": {
+      "type": "string"
+    },
+    "supervisor_appointment": {
+      "type": "string",
+      "description": "The supervisor's appointment at time of assessment."
+    },
+    "individual_appointment": {
+      "type": "string",
+      "description": "The individual's appointment during the assessment period."
+    },
+    "overall_assessment": {
+      "type": "string",
+      "description": "Overall supervisor assessment summary."
+    },
+    "key_strengths": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "development_areas": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "attributes_observed": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "attribute": {
+            "type": "string"
+          },
+          "observation": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "skills_demonstrated": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "skill": {
+            "type": "string"
+          },
+          "level": {
+            "type": "number"
+          },
+          "evidence": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "career_recommendation": {
+      "type": "string",
+      "description": "Supervisor's career/development recommendation."
+    },
+    "supervisor_narrative": {
+      "type": "string",
+      "description": "Free-text narrative. Must NOT be automatically converted to confirmed facts."
+    },
+    "supporting_evidence": {
+      "type": "string",
+      "description": "Supporting evidence or examples cited by the supervisor."
+    },
+    "assessment_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "assessment_period",
+    "employee_id",
+    "employee_name",
+    "supervisor_name",
+    "assessment_date"
+  ]
+}

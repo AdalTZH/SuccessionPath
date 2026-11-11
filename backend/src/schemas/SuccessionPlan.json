@@ -1,0 +1,70 @@
+{
+  "name": "SuccessionPlan",
+  "type": "object",
+  "properties": {
+    "appointment_id": {
+      "type": "string"
+    },
+    "appointment_title": {
+      "type": "string"
+    },
+    "current_holder_id": {
+      "type": "string"
+    },
+    "current_holder_name": {
+      "type": "string"
+    },
+    "primary_successor_id": {
+      "type": "string"
+    },
+    "primary_successor_name": {
+      "type": "string"
+    },
+    "alternate1_id": {
+      "type": "string"
+    },
+    "alternate1_name": {
+      "type": "string"
+    },
+    "alternate2_id": {
+      "type": "string"
+    },
+    "alternate2_name": {
+      "type": "string"
+    },
+    "development_pipeline": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Employee IDs of development pipeline candidates (not yet ready but identified for future development)."
+    },
+    "succession_depth": {
+      "type": "string",
+      "enum": [
+        "Healthy",
+        "Limited",
+        "At Risk",
+        "Vacant/Critical"
+      ],
+      "description": "Healthy = 2+ credible successors incl 1 Ready; Limited = 1 ready/near-ready; At Risk = no Ready successor; Vacant/Critical = no credible successor."
+    },
+    "successor_basis": {
+      "type": "string",
+      "description": "Provenance of the current successor slots, e.g. 'History-derived' when populated from recorded appointment history. Cleared once HR confirms or replaces the entries."
+    },
+    "successor_evidence": {
+      "type": "string",
+      "description": "Recorded-history basis for the current successor slots (feeder appointment, observed moves and share of arrivals) \u2014 retained for HR review."
+    },
+    "last_reviewed": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "appointment_id",
+    "appointment_title",
+    "succession_depth"
+  ]
+}

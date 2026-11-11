@@ -1,0 +1,85 @@
+{
+  "name": "AppointmentPathway",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string",
+      "description": "Appointment label (SHORT APPT) this pathway record summarises."
+    },
+    "total_holdings": {
+      "type": "number",
+      "description": "Number of history rows carrying this label."
+    },
+    "distinct_holders": {
+      "type": "number"
+    },
+    "current_holders": {
+      "type": "number"
+    },
+    "typical_predecessors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "count": {
+            "type": "number"
+          },
+          "share": {
+            "type": "number",
+            "description": "Fraction of holders who arrived from this appointment."
+          }
+        }
+      },
+      "description": "Appointments most frequently held immediately before this one."
+    },
+    "typical_successors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "count": {
+            "type": "number"
+          },
+          "share": {
+            "type": "number",
+            "description": "Fraction of holders who moved to this appointment next."
+          }
+        }
+      },
+      "description": "Appointments most frequently held immediately after this one."
+    },
+    "median_tenure_months": {
+      "type": "number"
+    },
+    "min_tenure_months": {
+      "type": "number"
+    },
+    "max_tenure_months": {
+      "type": "number"
+    },
+    "first_start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "latest_start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "transition_sample_size": {
+      "type": "number",
+      "description": "Number of observed transitions used to derive predecessor/successor patterns."
+    },
+    "data_source": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "label"
+  ]
+}

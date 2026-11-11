@@ -1,0 +1,77 @@
+{
+  "name": "AppointmentHistory",
+  "type": "object",
+  "properties": {
+    "employee_id": {
+      "type": "string",
+      "description": "PERNR \u2014 primary linking identifier from the source workbook."
+    },
+    "employee_name": {
+      "type": "string",
+      "description": "EMP NUMBER \u2014 displayed identity."
+    },
+    "rank": {
+      "type": "string",
+      "description": "Rank recorded on this history row."
+    },
+    "vocation": {
+      "type": "string",
+      "description": "VOC recorded on this history row."
+    },
+    "appointment": {
+      "type": "string",
+      "description": "SHORT APPT \u2014 original abbreviated appointment name, preserved verbatim."
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date",
+      "description": "APPT FROM."
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date",
+      "description": "APPT TO. Omitted when the source value is 9999-12-31 (open-ended)."
+    },
+    "is_open_ended": {
+      "type": "boolean",
+      "description": "True when the source APPT TO was 9999-12-31."
+    },
+    "is_current": {
+      "type": "boolean",
+      "description": "True for the employee's single open-ended appointment."
+    },
+    "duration_months": {
+      "type": "number",
+      "description": "Inclusive duration in months, computed from the source dates. Null when open-ended."
+    },
+    "duration_label": {
+      "type": "string",
+      "description": "Human-readable duration, e.g. '2y 3m'. Open-ended rows show 'Current / Ongoing'."
+    },
+    "sequence": {
+      "type": "number",
+      "description": "Chronological position within the employee's history (1 = earliest)."
+    },
+    "source_appt_from": {
+      "type": "string",
+      "description": "Verbatim source APPT FROM value, retained for traceability."
+    },
+    "source_appt_to": {
+      "type": "string",
+      "description": "Verbatim source APPT TO value, retained for traceability."
+    },
+    "data_quality_flags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Flags raised while importing this row (invalid range, overlap, etc.)."
+    }
+  },
+  "required": [
+    "employee_id",
+    "employee_name",
+    "appointment",
+    "start_date"
+  ]
+}

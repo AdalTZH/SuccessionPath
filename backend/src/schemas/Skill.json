@@ -1,0 +1,33 @@
+{
+  "name": "Skill",
+  "type": "object",
+  "properties": {
+    "skill_name": {
+      "type": "string"
+    },
+    "skill_category": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "proficiency_scale": {
+      "type": "string"
+    },
+    "related_appointments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "related_courses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "skill_name"
+  ]
+}

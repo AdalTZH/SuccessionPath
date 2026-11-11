@@ -1,0 +1,38 @@
+{
+  "name": "AppointmentHistoryRaw",
+  "type": "object",
+  "properties": {
+    "pernr": {
+      "type": "string",
+      "description": "Source personnel number (PERNR) \u2014 primary linking identifier."
+    },
+    "rank": {
+      "type": "string",
+      "description": "Source RANK value."
+    },
+    "emp_number": {
+      "type": "string",
+      "description": "Source EMP NUMBER \u2014 used as the displayed employee name."
+    },
+    "voc": {
+      "type": "string",
+      "description": "Source VOC (vocation) value."
+    },
+    "appt_from": {
+      "type": "string",
+      "description": "Source APPT FROM date, stored verbatim as text."
+    },
+    "appt_to": {
+      "type": "string",
+      "description": "Source APPT TO date, stored verbatim as text. 9999-12-31 denotes open-ended."
+    },
+    "short_appt": {
+      "type": "string",
+      "description": "Source SHORT APPT \u2014 original abbreviated appointment name, preserved verbatim."
+    }
+  },
+  "required": [
+    "pernr",
+    "short_appt"
+  ]
+}

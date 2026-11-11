@@ -1,0 +1,76 @@
+{
+  "name": "CalibrationSession",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "assessment_type": {
+      "type": "string",
+      "enum": [
+        "Performance",
+        "Potential"
+      ]
+    },
+    "population": {
+      "type": "string"
+    },
+    "period": {
+      "type": "string"
+    },
+    "participants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "case_ids": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Prepare",
+        "Quality Check",
+        "Ready for Calibration",
+        "Calibrate",
+        "Record Outcome",
+        "Finalised"
+      ]
+    },
+    "movements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "employee_id": {
+            "type": "string"
+          },
+          "employee_name": {
+            "type": "string"
+          },
+          "initial_rating": {
+            "type": "number"
+          },
+          "calibrated_rating": {
+            "type": "number"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "authorised_by": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "title",
+    "assessment_type",
+    "status"
+  ]
+}

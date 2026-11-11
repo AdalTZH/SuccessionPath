@@ -1,0 +1,111 @@
+{
+  "name": "Assessment",
+  "type": "object",
+  "properties": {
+    "employee_id": {
+      "type": "string"
+    },
+    "employee_name": {
+      "type": "string"
+    },
+    "rank": {
+      "type": "string"
+    },
+    "vocation": {
+      "type": "string"
+    },
+    "current_appointment": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "Performance",
+        "Potential"
+      ]
+    },
+    "period": {
+      "type": "string"
+    },
+    "cycle": {
+      "type": "string"
+    },
+    "dimensions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "dimension": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "number"
+          },
+          "evidence": {
+            "type": "string"
+          },
+          "evidence_date": {
+            "type": "string"
+          },
+          "evidence_source": {
+            "type": "string"
+          },
+          "narrative": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "overall_rating": {
+      "type": "number"
+    },
+    "narrative": {
+      "type": "string"
+    },
+    "assessor": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "Incomplete",
+        "Submitted",
+        "Review Required",
+        "Clarification Required",
+        "Ready for Calibration",
+        "Calibrated",
+        "Finalised"
+      ]
+    },
+    "flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "flag": {
+            "type": "string"
+          },
+          "detail": {
+            "type": "string"
+          },
+          "severity": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "current_validation": {
+      "type": "string"
+    },
+    "last_reassessment": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "employee_id",
+    "employee_name",
+    "type",
+    "status"
+  ]
+}
