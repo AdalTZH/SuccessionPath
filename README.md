@@ -1,6 +1,6 @@
 # SuccessionPath — standalone build
 
-A full copy of the SuccessionPath HR Practitioners Workbench, re-implemented without Base44. The
+A full copy of the SuccessionPath HR Practitioners Workbenc. The
 production container serves the React application and Express API from one port and stores all
 application data in **PostgreSQL**, including Amazon Aurora PostgreSQL.
 
